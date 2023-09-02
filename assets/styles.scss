@@ -108,7 +108,15 @@ html, body {
 .row {
   display: flex;
   justify-content: space-around;
+  a {
+    margin: 0.5em;
+  }
 }
+
+.wrap {
+  flex-wrap: wrap;
+}
+
 
 a {
   color: $secondary-color;
