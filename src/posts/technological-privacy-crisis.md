@@ -255,7 +255,7 @@ There are many noteworthy projects out there that are inspiring to give you more
 To find other great projects you can look at Wikipedia's list of [open hardware projects](https://en.wikipedia.org/wiki/List_of_open-source_hardware_projects?ref=waotzi.org) and [open-source mobile phones](https://en.wikipedia.org/wiki/List_of_open-source_mobile_phones?ref=waotzi.org).
 
 ## Support
-If you found this article insightful please consider subscribing and leaving me a tip.
+If you found this article insightful please consider leaving a tip.
 
 Share this article with your aunt, grandmother, your pets and a stranger down the road to make more people aware about these issues and how they can find more privacy.
 
