@@ -5,7 +5,7 @@
   "scripts": {
     "prepare-posts": "node generatePugFromMd.js",
     "dev": "npm run prepare-posts && parcel src/pages/*.pug src/pages/blog/*.pug",
-    "build": "npm run prepare-posts && parcel build"
+    "build": "parcel build src/pages/*.pug src/pages/blog/*.pug"
   },
   "author": "NaoX",
   "license": "UNLICENSE",
