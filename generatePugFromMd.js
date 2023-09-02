@@ -14,7 +14,7 @@ fs.readdir(postsDir, (err, files) => {
   files.forEach(file => {
     if (path.extname(file) === '.md') {
       const postName = path.basename(file, '.md');
-      const content = `extends ../../layouts/base_layout.pug\n\nblock content\n  include:markdown-it ../../posts/${postName}.md`;
+      const content = `extends ../../layouts/post_layout.pug\n\nblock post\n  include:markdown-it ../../posts/${postName}.md`;
       fs.writeFileSync(path.join(blogDir, `${postName}.pug`), content);
     }
   });

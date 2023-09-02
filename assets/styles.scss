@@ -5,7 +5,12 @@ $background-color: #210932;
 $navigation-color: #311942;
 @font-face {
   font-family: 'TranscendsGame';
-  src: url('./TranscendsGamesUpright.otf'); 
+  src: url('./fonts/TranscendsGamesUpright.otf'); 
+}
+
+@font-face {
+  font-family: 'SquareAntiqua';
+  src: url('./fonts/SquareAntiqua-Book.ttf'); 
 }
 
 @mixin cardStyles {
@@ -42,7 +47,7 @@ html, body {
   color: $primary-color;
   background-color: $background-color;
   font-size: larger;
-  font-family: TranscendsGame;
+  font-family: SquareAntiqua;
   overflow-x: hidden;
 }
 
@@ -226,7 +231,7 @@ button, .button {
     @include cardStyles;
     flex-direction: column;
     max-width: 320px;
-  
+    margin: 0.5em 0;
     &:hover {
       border-color: $secondary-color;
     }
