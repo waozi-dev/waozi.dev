@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Waotzi]]></title>
+        <description><![CDATA[Waotzi - Bringing Technology to Life]]></description>
+        <link>https://waotzi.org</link>
+        <image>
+            <url>https://waotzi.org/assets/favicon.png</url>
+            <title>Waotzi</title>
+            <link>https://waotzi.org</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sat, 02 Sep 2023 12:34:39 GMT</lastBuildDate>
+        <atom:link href="https://waotzi.org/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Clingy Tree]]></title>
+            <description><![CDATA[He was in his early 20s when he met the clingy tree. Everything about this tree seemed perfectly normal. The tree had roots, a stem, branches, leaves and in summer, it had bright red fruits...]]></description>
+            <link>/blog/clingy-tree</link>
+            <guid isPermaLink="true">/blog/clingy-tree</guid>
+            <pubDate>Tue, 29 Sep 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Imaginary House]]></title>
+            <description><![CDATA[It all started with a chance encounter that felt like fate. We were meant to be together...]]></description>
+            <link>/blog/imaginary-house</link>
+            <guid isPermaLink="true">/blog/imaginary-house</guid>
+            <pubDate>Sun, 13 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Technological Privacy Crises]]></title>
+            <description><![CDATA[Let me just make a TikTok quickly, OMG look at the food here - I gotta post it on Instagram. Wow everything is backed up automatically on the cloud. Thank you daddy Google. I will trust you forever~]]></description>
+            <link>/blog/technological-privacy-crisis</link>
+            <guid isPermaLink="true">/blog/technological-privacy-crisis</guid>
+            <pubDate>Fri, 02 Jun 2023 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
