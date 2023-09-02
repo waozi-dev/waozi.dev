@@ -1,13 +1,46 @@
+$primary-color: #e0ffe0;
+$secondary-color: #9f48da;
+$tertiary-color: #a0afa0;
+$background-color: #210932;
+
 @font-face {
   font-family: 'TranscendsGame';
   src: url('./TranscendsGamesUpright.otf'); 
 }
 
+@mixin cardStyles {
+  border: 2px solid $primary-color;
+  border-radius: 1em;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  overflow: hidden;
+  line-height: 1.5rem;
+  &-content {
+      padding: 0.5em;
+      h2 {
+          margin-top: 0;
+          color: $primary-color;
+      }
+      p {
+          margin: 20px 0;
+          color: $tertiary-color;
+      }
+  }
+  &-image {
+      width: 100%;
+      height: 300px;
+      display: block;
+      object-fit: cover;
+      overflow: hidden;
+  }
+}
+
 html, body {
   padding: 0;
   margin: 0;
-  color: #e0ffe0;
-  background-color: #210932;
+  color: $primary-color;
+  background-color: $background-color;
   font-size: larger;
   font-family: TranscendsGame;
   overflow-x: hidden;
@@ -15,25 +48,25 @@ html, body {
 
 .hero {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 500px;
-  background-image: url('./banner.jpg');
-  background-size: cover;
-  background-position: center;
+  background: url('./banner.jpg') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
+  .title, .tagline {
+    color: white;
+  }
+
   .title {
     font-size: 3rem;
-    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .tagline {
     font-size: 1.5rem;
-    color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 
@@ -42,13 +75,11 @@ html, body {
   }
 }
 
-
 .content {
-  max-width: 900px;
+  max-width: 1200px;
   margin: auto;
   padding: 1em;
   line-height: 2em;
-
 }
 
 .navigation {
@@ -80,7 +111,6 @@ html, body {
   }
 }
 
-
 a, button {
   text-decoration: none;
   font-weight: bold;
@@ -89,73 +119,34 @@ a, button {
   padding: 10px 20px;
   transition: background-color 0.3s, color 0.3s;
   cursor: pointer;
-  background-color: #9f48da; // A shade of purple
-  color: #e0ffe0; // The greenish text color used elsewhere
-}
+  background-color: $secondary-color;
+  color: $primary-color;
 
-a:hover, button:hover {
-  background-color: #e0ffe0; // The greenish text color
-  color: #210932; // The dark purple background color
+  &:hover {
+    background-color: $primary-color;
+    color: $background-color;
+  }
 }
 
 button {
   display: inline-block;
-  font-family: 'TranscendsGame';
+  font-family: TranscendsGame;
 }
 
-
-.card-container {
+.portfolio-card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 
   .card {
-    border: 2px solid #e0ffe0;
-    border-radius: 1em;
-    max-width: 400px; 
+    @include cardStyles;
+    max-width: 400px;
     position: relative;
-
-    .card-image {
-      border-radius: 1em 1em 0 0;
-      width: 100%; 
-      height: 250px;
-      display: block;
-      object-fit: cover;
-      overflow: hidden; 
-    }
-    
-    .card-content {
-      padding: 0.5em;
-      h2 {
-        margin-top: 0;
-        color: #e0ffe0; 
-      }
-
-      p {
-        margin: 20px 0;
-      }
-
-      a {
-        display: block;
-        margin: 20px auto;
-        text-align: center;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 8px;
-        background-color: #9f48da;
-        color: #e0ffe0;
-        transition: background-color 0.3s, color 0.3s;
-
-        &:hover {
-          background-color: #e0ffe0;
-          color: #210932;
-        }
-      }
+    a {
+      display: flex;
+      justify-content: center;
     }
   }
-
 }
 
 
@@ -174,38 +165,34 @@ button {
     color: inherit;
   }
 
+  
   .card {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    text-decoration: none;
-    border: 2px solid #e0ffe0;
-    border-radius: 8px;
-    overflow: hidden;
-    line-height: 1.5rem;
+    @include cardStyles;
     height: 200px;
-
+    display: flex;
+    
     &:hover {
-      border-color: #9f48da; // Adjust as needed
+        border-color: $secondary-color;
     }
 
-    .card-content {
+    &-content {
       flex: 1;
-      padding: 0.8em;
-
-      h2 {
-        color: #e0ffe0;
-        margin: 0;
-      }
-
+      position: relative;
+      padding-bottom: 1.5em;
+    
       p {
-        color: #a0afa0
+        color: $tertiary-color;
       }
-
+    
       .domain {
         display: flex;
         align-items: center;
-
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding-left: 0.5em;
+        padding-bottom: 0.5em;
+    
         .logo {
           width: 20px;
           height: 20px;
@@ -213,16 +200,87 @@ button {
         }
       }
     }
-
-    .card-image {
+    
+    &-image {
+      display: flex;
       flex-basis: 30%; 
-      overflow: hidden;
+      align-items: baseline;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        padding-bottom: 5em;
+        margin-bottom: 5em;
+      }
+    }
+  }
+}
+
+.blog-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  a {
+    background-color: transparent;
+  }
+
+ 
+  .card {
+    @include cardStyles;
+    flex-direction: column;
+    max-width: 320px;
+  
+    &:hover {
+      border-color: $secondary-color;
+    }
+
+    &-image {
+      display: flex;
+      flex-basis: 30%; 
+      align-items: baseline;
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
+        padding-bottom: 5em;
+        margin-bottom: 5em;
       }
+    }
+    &-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      margin: 0.5em 0;
+      color: $secondary-color;
+    }
+
+    &-title {
+      font-weight: bold;
+      margin: 0.5em 0;
+    }
+
+    &-desc {
+      color: $tertiary-color;
+      flex-grow: 1;
+    }
+
+    &-date {
+      font-size: 0.9em;
+      color: $primary-color;
+      margin-top: 0.5em;
+
+      &::after {
+        content: '\2022'; // Unicode for a bullet point
+        margin: 0 0.5em;
+      }
+    }
+
+    &-read-time {
+      font-size: 0.8em;
+      color: $secondary-color;
     }
   }
 }

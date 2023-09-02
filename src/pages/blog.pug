@@ -1,4 +1,22 @@
 extends ../layouts/base_layout.pug
 
+mixin blogCard(imgSrc, imgAlt, tag, title, desc, date, readTime, url)
+  a(href=url)
+    div.card
+      div.card-image
+        img(src=imgSrc, alt=imgAlt)
+      div.card-content
+        div.card-tags
+          span= tag
+        h2.card-title= title
+        p.card-desc= desc
+        span.card-date= date
+        span.card-read-time= readTime
+
 block content
-  h1 Support my work
+  div.blog-card-container
+    +blogCard("/assets/blog/technology_crisis.jpg", "Technological Privacy Crises", "technology", "Technological Privacy Crises", "Let me just make a TikTok quickly, OMG look at the food here - I gotta post it on Instagram. Wow everything is backed up automatically on the cloud. Thank you daddy Google. I will trust you forever~", "Jun 2, 2023", "14 min read", "/blog/technological-privacy-crises")
+
+    +blogCard("/assets/blog/imaginary_house.jpg", "Imaginary House", "drama", "Imaginary House", "It all started with a chance encounter that felt like fate. We were meant to be together...", "Nov 13, 2022", "4 min read", "/blog/imaginary-house")
+
+    +blogCard("/assets/blog/clingy_tree.jpg", "Clingy Tree", "philosophy", "Clingy Tree", "He was in his early 20s when he met the clingy tree. Everything about this tree seemed perfectly normal. The tree had roots, a stem, branches, leaves and in summer, it had bright red fruits...", "Sep 29, 2020", "2 min read", "/clingy-tree/")
