@@ -98,9 +98,11 @@ html, body {
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     li {
-      margin: 0 1rem;
+      margin: 1rem;
+
     }
   }
 }
