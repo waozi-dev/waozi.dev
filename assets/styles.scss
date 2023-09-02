@@ -155,6 +155,7 @@ button, .button {
     @include cardStyles;
     max-width: 400px;
     position: relative;
+    margin: 1em;
     a {
       display: flex;
       justify-content: center;
