@@ -75,6 +75,7 @@ html, body {
   .tagline {
     font-size: 1.5rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin: 1em;
   }
 
   .logo {
@@ -85,7 +86,7 @@ html, body {
 .content {
   max-width: 1200px;
   margin: auto;
-  padding: 1em;
+  padding: 0.5em;
   line-height: 2em;
 }
 
@@ -157,7 +158,7 @@ button, .button {
     @include cardStyles;
     max-width: 400px;
     position: relative;
-    margin: 1em;
+    margin: 0.5em 0;
     a {
       display: flex;
       justify-content: center;
