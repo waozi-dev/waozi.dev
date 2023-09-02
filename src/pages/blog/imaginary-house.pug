@@ -1,0 +1,8 @@
+extends ../../layouts/post_layout.pug
+
+block post-var
+  include ../../posts/metadata.pug
+  - var data = imaginary_house
+
+block post
+  include:markdown-it ../../posts/imaginary-house.md

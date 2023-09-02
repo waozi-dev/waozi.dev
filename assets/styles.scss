@@ -285,3 +285,59 @@ button, .button {
     }
   }
 }
+
+.blog {
+  padding: 1em;
+  max-width: 1200px;
+  margin: auto;
+
+  img {
+    margin: 1em;
+    display: flex;
+    margin: auto;
+    width: 100%;
+  }
+  &-meta {
+    .tag {
+      border-radius: 5px;
+      display: inline-block;
+      color: $tertiary-color;
+    }
+
+    .title {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      margin-bottom: 20px;
+    }
+
+    .blog-row {
+      display: flex;
+      margin-bottom: 20px;
+      .profile-pic {
+        width: 50px;
+        height: 50px;
+        margin-right: 1em;
+      }
+
+      .profile-info {
+        .name {
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+
+        .publish-info {
+          display: flex;
+          align-items: center;
+          color: $tertiary-color;
+
+          .date, .read-time {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

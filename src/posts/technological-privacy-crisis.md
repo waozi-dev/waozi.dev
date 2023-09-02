@@ -1,5 +1,3 @@
-![Privacy Crisis](/assets/blog/technology_crisis.jpg)
-
 # Going Down the Rabbit Hole...
 When you start digging deeper into how each layer of our everyday technology functions, it might shock you that there are multiple opportunities for the government and big companies to integrate a backdoor that give them unrestricted access to your data, or simple trackers that monitor your everyday move.
 
@@ -196,8 +194,8 @@ There are many other messaging apps which are more private, but they are harder 
  - [SimpleX](https://simplex.chat/?ref=waotzi.org)
  - [XMPP](https://xmpp.org/?ref=waotzi.org)
  
-For a more comprehensive comparison of privacy concerns relating messaging tools you can check the link below:
-[Secure Messaging Apps](https://www.securemessagingapps.com/?ref=waotzi.org)
+For a more comprehensive comparison of privacy concerns relating messaging check out
+[Secure Messaging Apps](https://www.securemessagingapps.com/?ref=waotzi.org).
 
 ## Social media
 Facebook is a great way to connect with your old long lost buddies, and such a great way to be bombarded by advertising and getting your data sold. And best of all if you speak out against certain narratives your account could be suspended.

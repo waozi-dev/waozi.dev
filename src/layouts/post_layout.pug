@@ -1,6 +1,22 @@
-extend ./base_layout.pug
+include ./base_layout.pug
 
+block post-var
 
 block content
   div.blog
+    div.blog-meta
+      div.tag= data.tag
+      h2.title= data.title
+      p.desc= data.desc
+      
+      div.blog-row
+        img.profile-pic(src="/assets/me.jpg", alt="Martin Schiller", style="border-radius: 50%")
+        div.profile-info
+          span.name Martin Schiller
+          div.publish-info
+            span.date= data.date
+            span •&nbsp;
+            span.read-time= data.readTime
+    img(src=data.imgSrc, alt=data.imgAlt)
+
     block post
