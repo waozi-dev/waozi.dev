@@ -1,8 +1,121 @@
 include ./base_layout.pug
 
 block post-var
-
 block content
+  script.
+    document.addEventListener('DOMContentLoaded', function() {
+      const content = document.querySelector('.blog');
+      const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+      if (headings.length <= 1) return;
+
+      const nav_container = document.createElement('div');
+      nav_container.classList.add('floating-nav-container');
+      nav_container.style.position = 'fixed'; // Ensure it's fixed
+      const nav = document.createElement('div');
+      nav.classList.add('floating-nav');
+      nav_container.appendChild(nav);
+
+      const titleBar = document.createElement('div');
+      titleBar.classList.add('nav-title-bar');
+      titleBar.innerHTML = 'Navigation <span class="toggle-nav">_</span>';
+      nav.appendChild(titleBar);
+
+      
+      const toggleNav = nav.querySelector('.toggle-nav');
+      
+      toggleNav.addEventListener('click', () => {
+        const links = nav.querySelectorAll('a');
+        if (toggleNav.textContent === '_') {
+          links.forEach(link => link.classList.add('hidden'));
+          toggleNav.textContent = '+';
+        } else {
+          links.forEach(link => link.classList.remove('hidden'));
+          toggleNav.textContent = '_';
+        }
+      });
+
+      let isDragging = false;
+      let offsetX, offsetY;
+
+      titleBar.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - nav.getBoundingClientRect().left;
+        offsetY = e.clientY - nav.getBoundingClientRect().top;
+        titleBar.style.cursor = 'grabbing';
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        nav_container.style.left = (e.clientX - offsetX) + 'px';
+        nav_container.style.top = (e.clientY - offsetY) + 'px';
+      });
+
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+        titleBar.style.cursor = 'grab';
+      });
+
+
+      const hierarchy = [];  // { h1: h1Element, children: [h2, h3...] }
+      let currentH1 = null;
+
+      for (let i = 1; i < headings.length; i++) {
+        const heading = headings[i];
+        const link = document.createElement('a');
+        const id = heading.textContent.trim().replace(/\s+/g, '-').toLowerCase();
+        heading.id = id;
+
+        link.href = `#${id}`;
+        link.textContent = heading.textContent.length > 10 ? heading.textContent.slice(0, 10) + '...' : heading.textContent;
+        link.classList.add(`nav-${heading.tagName.toLowerCase()}`);
+
+        if (heading.tagName === 'H1') {
+          currentH1 = { h1: link, children: [] };
+          hierarchy.push(currentH1);
+        } else if (currentH1) {
+          currentH1.children.push(link);
+        }
+
+        nav.appendChild(link);
+      };
+
+      const showAssociatedLinks = (h1Item) => {
+        hierarchy.forEach(item => {
+          item.children.forEach(child => child.classList.remove('show'));
+        });
+        h1Item.children.forEach(child => child.classList.add('show'));
+      };
+
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const id = entry.target.getAttribute('id');
+          const anchor = document.querySelector(`a[href="#${id}"]`);
+          
+          if (entry.intersectionRatio > 0) {
+            const parentH1 = hierarchy.find(item => item.children.includes(anchor) || item.h1 === anchor);
+            if (parentH1 && (!currentH1 || parentH1.h1 !== currentH1.h1)) {
+              currentH1 = parentH1;
+              showAssociatedLinks(currentH1);
+            }
+          }
+          if (anchor) {
+              anchor.classList.toggle("active", entry.intersectionRatio > 0);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      headings.forEach(heading => observer.observe(heading));
+
+      document.body.appendChild(nav_container);
+    });
+
+
+
+
+
   div.blog
     div.blog-meta
       div.tag= data.tag

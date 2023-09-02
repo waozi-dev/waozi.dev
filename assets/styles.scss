@@ -1,8 +1,10 @@
 $primary-color: #e0ffe0;
 $secondary-color: #9f48da;
 $tertiary-color: #a0afa0;
+$quaternary-color: #d19fba;
 $background-color: #210932;
 $navigation-color: #311942;
+
 @font-face {
   font-family: 'TranscendsGame';
   src: url('./fonts/TranscendsGamesUpright.otf'); 
@@ -349,6 +351,89 @@ button, .button {
           }
         }
       }
+    }
+  }
+}
+
+.floating-nav-container {
+  display: flex;
+  left: 5%;
+  top: 10%;
+  flex-direction: column;
+  position: fixed;
+  justify-content: center;
+  z-index: 1000;
+
+  .floating-nav {
+    margin: auto;
+    width: 120px;
+    background-color: $background-color;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    font-size: small;
+
+    .nav-title-bar {
+      top: 0;
+      background-color: $navigation-color;
+      cursor: grab;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1em;
+      padding: 0.5em;
+    }
+    
+    .toggle-nav {
+      cursor: pointer;
+      margin-right: 0.5em;
+    }
+    
+
+    a {
+      padding: 0 0.3em;
+
+      display: none;
+      text-decoration: none;
+      color: $primary-color;
+      margin-bottom: 0.5em;
+    
+      &:hover {
+        color: $secondary-color;
+      }
+      &.active {
+        font-weight: bold;
+        color: $quaternary-color;
+        font-size: 1.2em;
+      }
+      &.show {
+        display: block;
+      }
+      &.nav-h1 {
+        display: block;
+      }
+      &.hidden {
+        display: none;
+      }
+  }
+  
+    .nav-h1 {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .nav-h2 {
+      font-size: 1.1em;
+      font-weight: 500;
+      padding-left: 0.8em;
+    }
+    .nav-h3 {
+      font-size: 1em;
+      padding-left: 1.6em;
+    }
+    .nav-h4 {
+      font-size: 0.8em;
+      padding-left: 2.4em;
     }
   }
 }
