@@ -86,7 +86,7 @@ html, body {
 .content {
   max-width: 1200px;
   margin: auto;
-  padding: 0.5em;
+  padding: 1em;
   line-height: 2em;
 }
 
@@ -185,7 +185,6 @@ button, .button {
     @include cardStyles;
     height: 200px;
     display: flex;
-    
     &:hover {
         border-color: $secondary-color;
     }
@@ -193,7 +192,7 @@ button, .button {
     &-content {
       flex: 1;
       position: relative;
-      padding-bottom: 1.5em;
+      padding: 1em;
     
       p {
         color: $tertiary-color;
@@ -205,8 +204,8 @@ button, .button {
         position: absolute;
         left: 0;
         bottom: 0;
-        padding-left: 0.5em;
-        padding-bottom: 0.5em;
+        padding-left: 1em;
+        padding-bottom: 1em;
     
         .logo {
           width: 20px;
