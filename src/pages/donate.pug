@@ -1,3 +1,27 @@
 extends ../layouts/base_layout.pug
 
 block content
+  h1 Support my work
+
+  div.donation-card-container
+    a.card(href="https://github.com/sponsors/waotzi")
+      div.card-content
+        h2 Sponsor @waotzi on GitHub Sponsors
+        p I’m Martin, a software dev passionate about open source projects & game creation. I created a score voting tool to simplify group decision-making. With extensive exp in software engineering & game…
+        div.domain
+          img.logo(src="/assets/icons/github-mark.png", alt="GitHub Logo")
+          span GitHub
+      div.card-image
+        img(src="/assets/me.jpg", alt="GitHub Sponsors")
+
+    a.card(href="https://coindrop.to/waotzi")
+      div.card-content
+        h2 Waotzi’s Coindrop
+        p Send money to Waotzi with no fees
+        div.domain
+          img.logo(src="/assets/icons/coindrop.png", alt="Coindrop Logo")
+          span Coindrop
+      div.card-image
+        img(src="/assets/icons/coindrop.png", alt="Coindrop")
+    center
+      script(type="text/javascript", src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js", data-name="bmc-button", data-slug="waotzi", data-color="#BD5FFF", data-emoji="", data-font="Bree", data-text="Buy me a coffee", data-outline-color="#000000", data-font-color="#ffffff", data-coffee-color="#FFDD00")
