@@ -34,17 +34,18 @@ html(lang="en")
     link(rel="icon" type="image/png" href=favicon)
   body
     header.hero
-      img.logo(src=logo, alt="Logo") 
+      a(href="/")
+        img.logo(src=logo, alt="Logo") 
       p.tagline #{tagline}
     nav.navigation
       ul
         li 
-          a(href="/") About
+          a.button(href="/") About
         li 
-          a(href="/portfolio") Portfolio
+          a.button(href="/portfolio") Portfolio
         li 
-          a(href="/blog") Blog
+          a.button(href="/blog") Blog
         li 
-          a(href="/donate") Donate
+          a.button(href="/donate") Donate
     div.content
       block content

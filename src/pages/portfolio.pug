@@ -6,7 +6,7 @@ mixin card(imageSrc, title, description, linkText, linkHref)
     div.card-content
       h2= title
       p= description
-      a(href=linkHref)= linkText
+      a.button(href=linkHref)= linkText
 
 block content
   div.content

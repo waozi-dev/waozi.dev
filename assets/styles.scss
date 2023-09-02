@@ -2,7 +2,7 @@ $primary-color: #e0ffe0;
 $secondary-color: #9f48da;
 $tertiary-color: #a0afa0;
 $background-color: #210932;
-
+$navigation-color: #311942;
 @font-face {
   font-family: 'TranscendsGame';
   src: url('./TranscendsGamesUpright.otf'); 
@@ -83,7 +83,7 @@ html, body {
 }
 
 .navigation {
-  background-color: #311942;
+  background-color: $navigation-color;
   padding: 1rem 0;
   text-align: center;
 
@@ -96,22 +96,25 @@ html, body {
 
     li {
       margin: 0 1rem;
-
-      a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-        transition: color 0.3s;
-
-        &:hover {
-          color: #007BFF; 
-        }
-      }
     }
   }
 }
 
-a, button {
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+  color: $secondary-color;
+  text-decoration: none;
+  &:hover {
+    color: $tertiary-color;
+  }
+}
+
+
+button, .button {
   text-decoration: none;
   font-weight: bold;
   border: none;
@@ -128,10 +131,7 @@ a, button {
   }
 }
 
-button {
-  display: inline-block;
-  font-family: TranscendsGame;
-}
+
 
 .portfolio-card-container {
   display: flex;
