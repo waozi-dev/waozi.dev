@@ -1,0 +1,19 @@
+extends ../layouts/base_layout.pug
+
+mixin card(imageSrc, title, description, linkText, linkHref)
+  div.card
+    img.card-image(src=imageSrc, alt=title)
+    div.card-content
+      h2= title
+      p= description
+      a(href=linkHref)= linkText
+
+block content
+  div.content
+    h1 Tools and Applications
+    div.card-container
+      +card('/assets/cards/ukuvota.jpg', 'Ukuvota', 'Ukuvota is a collaborative score voting platform where anyone can start a process. Proposals are collected and voted upon using emojis. The final scores highlight the preferred solution.', 'Start a Process!', 'https://ukuvota.world')
+      +card('/assets/cards/inbe.png', 'Inner Breeze', 'Inner Breeze is a breathing tracker for the Wim Hof breathing technique, helping users regain focus in their lives by meditating regularly and keeping track of their progress.', 'Start Meditating!', 'https://naox.io/inbe/#/')
+    h1 Video Games
+    div.card-container
+      +card('/assets/cards/geocats.png', 'Geocats', 'Geocats is a 2D action-platformer centered around the Geocats from Geoterra. They search for geocaches. The project has been discontinued.', 'Play now!', 'https://geocats.netlify.app')

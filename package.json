@@ -1,0 +1,19 @@
+{
+  "name": "naox.io",
+  "version": "1.0.0",
+  "description": "![Logo](/assets/favicon.png)",
+  "devDependencies": {
+    "@parcel/transformer-pug": "^2.9.3",
+    "@parcel/transformer-sass": "^2.9.3",
+    "parcel": "^2.9.3"
+  },
+  "scripts": {
+    "dev": "parcel src/pages/*.pug",
+    "build": "parcel build src/pages/*.pug --dist-dir ./dist"
+  },
+  "author": "NaoX",
+  "license": "UNLICENSE",
+  "dependencies": {
+    "pug": "^3.0.2"
+  }
+}
