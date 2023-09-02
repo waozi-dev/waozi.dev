@@ -1,4 +1,4 @@
-extends ../layouts/base_layout.pug
+extends ../../layouts/base_layout.pug
 
 mixin blogCard(imgSrc, imgAlt, tag, title, desc, date, readTime, url)
   a(href=url)
@@ -15,7 +15,7 @@ mixin blogCard(imgSrc, imgAlt, tag, title, desc, date, readTime, url)
 
 block content
   div.blog-card-container
-    +blogCard("/assets/blog/technology_crisis.jpg", "Technological Privacy Crises", "technology", "Technological Privacy Crises", "Let me just make a TikTok quickly, OMG look at the food here - I gotta post it on Instagram. Wow everything is backed up automatically on the cloud. Thank you daddy Google. I will trust you forever~", "Jun 2, 2023", "14 min read", "/blog/technological-privacy-crises")
+    +blogCard("/assets/blog/technology_crisis.jpg", "Technological Privacy Crises", "technology", "Technological Privacy Crises", "Let me just make a TikTok quickly, OMG look at the food here - I gotta post it on Instagram. Wow everything is backed up automatically on the cloud. Thank you daddy Google. I will trust you forever~", "Jun 2, 2023", "14 min read", "/blog/technological-privacy-crisis")
 
     +blogCard("/assets/blog/imaginary_house.jpg", "Imaginary House", "drama", "Imaginary House", "It all started with a chance encounter that felt like fate. We were meant to be together...", "Nov 13, 2022", "4 min read", "/blog/imaginary-house")
 

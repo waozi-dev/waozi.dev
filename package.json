@@ -8,12 +8,16 @@
     "parcel": "^2.9.3"
   },
   "scripts": {
-    "dev": "parcel src/pages/*.pug",
-    "build": "parcel build src/pages/*.pug --dist-dir ./dist"
+    "prepare-posts": "node generatePugFromMd.js",
+    "dev": "npm run prepare-posts && parcel src/pages/*.pug src/pages/blog/*.pug",
+    "build": "npm run prepare-posts && parcel build"
   },
   "author": "NaoX",
   "license": "UNLICENSE",
   "dependencies": {
-    "pug": "^3.0.2"
+    "jstransformer-markdown-it": "^3.0.0",
+    "markdown-it": "^13.0.1",
+    "pug": "^3.0.2",
+    "serve": "^14.2.1"
   }
 }
