@@ -69,4 +69,4 @@ posts.forEach(post => {
 });
 
 const rssFeed = feed.xml({ indent: true });
-fs.writeFileSync(path.join(__dirname, 'src', 'pages', 'rss.xml'), rssFeed);
+fs.writeFileSync(path.join(__dirname, 'dist', 'rss.xml'), rssFeed);
