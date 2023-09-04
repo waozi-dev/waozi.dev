@@ -55,7 +55,7 @@ const feed = new RSS({
   description: 'Waotzi - Bringing Technology to Life',
   feed_url: 'https://waotzi.org/rss.xml',
   site_url: 'https://waotzi.org',
-  image_url: 'https://waotzi.org/assets/favicon.png',
+  image_url: 'https://waotzi.org/favicon.png',
 });
 
 posts.forEach(post => {
