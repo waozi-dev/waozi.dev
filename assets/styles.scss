@@ -118,7 +118,9 @@ html, body {
 .wrap {
   flex-wrap: wrap;
 }
-
+.center {
+  text-align: center;
+}
 
 a {
   color: $secondary-color;
@@ -231,6 +233,7 @@ button, .button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 1em;
 
   a {
     background-color: transparent;
