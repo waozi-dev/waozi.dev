@@ -1,4 +1,4 @@
-const RSS = require('rss');
+const { Feed } = require('feed');
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
@@ -50,23 +50,41 @@ fs.readdirSync(postsDir).forEach(file => {
   }
 });
 
-const feed = new RSS({
+const feed = new Feed({
   title: 'Waotzi',
   description: 'Waotzi - Bringing Technology to Life',
-  feed_url: 'https://waotzi.org/rss.xml',
-  site_url: 'https://waotzi.org',
-  image_url: 'https://waotzi.org/favicon.png',
+  id: BASE_URL,
+  link: BASE_URL,
+  image: `${BASE_URL}/favicon.png`,
+  favicon: `${BASE_URL}/favicon.png`,
+  copyright: 'Content under Creative Commons Attribution 2023, Waotzi',
+  updated: new Date(),
+  generator: 'Waotzi',
+  feedLinks: {
+    json: `${BASE_URL}/feed.json`,
+    atom: `${BASE_URL}/atom.xml`
+  },
+  author: {
+    name: 'Martin Schiller',
+    email: 'hello@waotzi.org',
+    link: BASE_URL
+  }
 });
 
 posts.forEach(post => {
-
-  feed.item({
+  feed.addItem({
     title: post.title,
-    description: post.content || post.desc,  // Use content if available, else use desc
-    url: feed.site_url + post.url,
+    id: `${BASE_URL}${post.url}`,
+    link: `${BASE_URL}${post.url}`,
+    description: post.desc,
+    content: post.content,
+    author: [{
+      name: 'Martin Schiller',
+      email: 'hello@waotzi.org'
+    }],
     date: new Date(post.date)
   });
 });
 
-const rssFeed = feed.xml({ indent: true });
-fs.writeFileSync(path.join(__dirname, 'dist', 'rss.xml'), rssFeed);
+fs.writeFileSync(path.join(__dirname, 'dist', 'rss.xml'), feed.rss2());
+fs.writeFileSync(path.join(__dirname, 'dist', 'atom.xml'), feed.atom1());
