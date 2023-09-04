@@ -77,7 +77,6 @@ posts.forEach(post => {
     id: `${BASE_URL}${post.url}`,
     link: `${BASE_URL}${post.url}`,
     description: post.content || post.desc,
-    content: post.content,
     author: [{
       name: 'Martin Schiller',
       email: 'hello@waotzi.org'
