@@ -1,6 +1,8 @@
-include ./base_layout.pug
+extends ./base_layout.pug
 
-block post-var
+block variables 
+  - var rssurl = '../rss.xml'
+
 block content
   script.
     document.addEventListener('DOMContentLoaded', function() {

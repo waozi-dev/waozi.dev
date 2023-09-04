@@ -35,7 +35,7 @@ fs.readdir(postsDir, (err, files) => {
       const content = `
 extends ../../layouts/post_layout.pug
 
-block post-var
+block variables
   include ../../_gen/metadata.pug
   - var data = ${variableName}
 

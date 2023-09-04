@@ -6,16 +6,11 @@ $background-color: #210932;
 $navigation-color: #311942;
 
 @font-face {
-  font-family: 'TranscendsGame';
-  src: url('./fonts/TranscendsGamesUpright.otf'); 
-}
-
-@font-face {
   font-family: 'SquareAntiqua';
   src: url('./fonts/SquareAntiqua-Book.ttf'); 
 }
 
-@mixin cardStyles {
+.card {
   border: 2px solid $primary-color;
   border-radius: 1em;
   padding: 0;
@@ -23,6 +18,7 @@ $navigation-color: #311942;
   text-decoration: none;
   overflow: hidden;
   line-height: 1.5rem;
+
   &-content {
       padding: 0.5em;
       h2 {
@@ -34,6 +30,7 @@ $navigation-color: #311942;
           color: $tertiary-color;
       }
   }
+
   &-image {
       width: 100%;
       height: 300px;
@@ -149,16 +146,16 @@ button, .button {
   }
 }
 
+
 .portfolio-card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 
   .card {
-    @include cardStyles;
     max-width: 400px;
     position: relative;
-    margin: 0.5em 0;
+    margin: 0.5em;
     a {
       display: flex;
       justify-content: center;
@@ -180,11 +177,10 @@ button, .button {
     color: inherit;
   }
 
-  
   .card {
-    @include cardStyles;
     height: 200px;
     display: flex;
+
     &:hover {
         border-color: $secondary-color;
     }
@@ -235,13 +231,12 @@ button, .button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+
   a {
     background-color: transparent;
   }
-
  
   .card {
-    @include cardStyles;
     flex-direction: column;
     max-width: 320px;
     margin: 0.5em ;
@@ -287,7 +282,7 @@ button, .button {
       margin-top: 0.5em;
 
       &::after {
-        content: '\2022'; // Unicode for a bullet point
+        content: '\2022';
         margin: 0 0.5em;
       }
     }
@@ -310,6 +305,7 @@ button, .button {
     margin: auto;
     width: 100%;
   }
+
   &-meta {
     .tag {
       border-radius: 5px;
@@ -416,7 +412,7 @@ button, .button {
       &.hidden {
         display: none;
       }
-  }
+    }
   
     .nav-h1 {
       font-size: 1.2em;

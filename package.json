@@ -3,25 +3,25 @@
   "version": "1.0.0",
   "description": "![Logo](/assets/favicon.png)",
   "scripts": {
-    "generate-rss": "node generateRSS.js",
     "prepare-posts": "node generatePugFromMd.js",
+    "generate-rss": "node generateRSS.js",
     "dev": "npm run prepare-posts && npm run generate-rss && parcel src/pages/*.pug src/pages/blog/*.pug",
     "build": "parcel build src/pages/*.pug src/pages/blog/*.pug"
   },
   "author": "NaoX",
   "license": "UNLICENSE",
-  "dependencies": {
+  "devDependencies": {
+    "@parcel/packager-xml": "^2.9.3",
+    "@parcel/transformer-pug": "^2.9.3",
+    "@parcel/transformer-sass": "^2.9.3",
+    "@parcel/transformer-xml": "^2.9.3",
+    "@parcel/transformer-yaml": "^2.9.3",
     "js-yaml": "^4.1.0",
     "jstransformer-markdown-it": "^3.0.0",
     "jstransformer-yaml": "^0.0.0",
     "markdown-it": "^13.0.1",
+    "parcel": "^2.9.3",
     "pug": "^3.0.2",
     "rss": "^1.2.2"
-  },
-  "devDependencies": {
-    "@parcel/transformer-pug": "^2.9.3",
-    "@parcel/transformer-sass": "^2.9.3",
-    "@parcel/transformer-yaml": "^2.9.3",
-    "parcel": "^2.9.3"
   }
 }

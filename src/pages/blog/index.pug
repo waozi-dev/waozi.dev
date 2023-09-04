@@ -1,5 +1,8 @@
 extends ../../layouts/base_layout.pug
 
+block variables 
+  - var rssurl = '../rss.xml'
+
 mixin blogCard(data)
   a(href=data.url)
     div.card
