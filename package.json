@@ -5,7 +5,7 @@
   "scripts": {
     "prepare-posts": "node generatePugFromMd.js",
     "generate-rss": "node generateRSS.js",
-    "dev": "npm run prepare-posts && npm run generate-rss && parcel src/pages/*.pug src/pages/blog/*.pug",
+    "start": "npm run prepare-posts && npm run generate-rss && parcel src/pages/*.pug src/pages/blog/*.pug",
     "build": "parcel build src/pages/*.pug src/pages/blog/*.pug && npm run generate-rss"
   },
   "author": "NaoX",

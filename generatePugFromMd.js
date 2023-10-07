@@ -38,6 +38,10 @@ extends ../../layouts/post_layout.pug
 block variables
   include ../../_gen/metadata.pug
   - var data = ${variableName}
+  - title = data.title
+  - description = data.desc
+  - social_logo = data.imgSrc
+  - url = data.url
 
 block post
   include:markdown-it ../../posts/${postName}.md

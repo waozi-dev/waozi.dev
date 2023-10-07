@@ -3,6 +3,10 @@ extends ../../layouts/post_layout.pug
 block variables
   include ../../_gen/metadata.pug
   - var data = technological_privacy_crisis
+  - title = data.title
+  - description = data.desc
+  - social_logo = data.imgSrc
+  - url = data.url
 
 block post
   include:markdown-it ../../posts/technological-privacy-crisis.md
