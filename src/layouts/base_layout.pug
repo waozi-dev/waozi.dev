@@ -1,11 +1,10 @@
-- var logo = '/assets/favicon.png'
+- var logo = '/assets/logo.png'
 - var tagline = 'Bringing Technology to Life'
 
 block variables
   - var title = 'Waotzi'
   - var description = 'Waotzi - Bringing Technology to Life'
-  - var social_logo = '/assets/favicon.png'
-  - var favicon = '/assets/favicon.png'
+  - var social_logo = '/assets/social_logo.png'
   - var url = 'https://waotzi.org'
 
 block rssvar
@@ -38,7 +37,10 @@ html(lang="en")
     meta(name="twitter:image", content=social_logo)
 
     link(rel="stylesheet", href="/assets/styles.scss")
-    link(rel="icon" type="image/png" href=favicon)
+    link(rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png")
+    link(rel="manifest" href="/assets/site.webmanifest")
     link(rel="alternate" type="application/rss+xml" href=rssurl title="Waotzi Blog")
   body
     header.hero

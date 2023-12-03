@@ -1,7 +1,7 @@
 {
   "name": "naox.io",
   "version": "1.0.0",
-  "description": "![Logo](/assets/favicon.png)",
+  "description": "![Logo](/assets/logo.png)",
   "scripts": {
     "prepare-posts": "node generatePugFromMd.js",
     "generate-rss": "node generateRSS.js",
@@ -11,9 +11,11 @@
   "author": "NaoX",
   "license": "UNLICENSE",
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.9.3",
     "@parcel/packager-xml": "^2.9.3",
     "@parcel/transformer-pug": "^2.9.3",
     "@parcel/transformer-sass": "^2.9.3",
+    "@parcel/transformer-webmanifest": "^2.9.3",
     "@parcel/transformer-xml": "^2.9.3",
     "@parcel/transformer-yaml": "^2.9.3",
     "feed": "^4.2.2",
