@@ -5,7 +5,7 @@ const yaml = require('js-yaml');
 const markdownIt = require('markdown-it')();
 
 const postsDir = path.join(__dirname, 'src', 'posts');
-const BASE_URL = 'https://waotzi.org';
+const BASE_URL = 'https://waozi.dev';
 const posts = [];
 
 const getHashedFilename = (originalFilename) => {
@@ -51,22 +51,22 @@ fs.readdirSync(postsDir).forEach(file => {
 });
 
 const feed = new Feed({
-  title: 'Waotzi',
-  description: 'Waotzi - Bringing Technology to Life',
+  title: 'Wao',
+  description: 'Waozi - Bringing Technology to Life',
   id: BASE_URL,
   link: BASE_URL,
   image: `${BASE_URL}/logo.png`,
   favicon: `${BASE_URL}/logo.png`,
-  copyright: 'Content under Creative Commons Attribution 2023, Waotzi',
+  copyright: 'Content under Creative Commons Attribution 2023, Waozi',
   updated: new Date(),
-  generator: 'Waotzi',
+  generator: 'Waozi',
   feedLinks: {
     json: `${BASE_URL}/feed.json`,
     atom: `${BASE_URL}/atom.xml`
   },
   author: {
-    name: 'Martin Schiller',
-    email: 'hello@waotzi.org',
+    name: 'Waozi Dev',
+    email: 'hello@waozi.dev',
     link: BASE_URL
   }
 });
@@ -78,8 +78,8 @@ posts.forEach(post => {
     link: `${BASE_URL}${post.url}`,
     description: post.content || post.desc,
     author: [{
-      name: 'Martin Schiller',
-      email: 'hello@waotzi.org'
+      name: 'Waozi Dev',
+      email: 'hello@waozi.dev'
     }],
     date: new Date(post.date)
   });
