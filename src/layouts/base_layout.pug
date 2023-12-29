@@ -1,9 +1,9 @@
 - var logo = '/assets/logo.png'
-- var tagline = 'Bringing Technology to Life'
+- var tagline = 'Another Wondering Soul'
 
 block variables
-  - var title = 'Waozi'
-  - var description = 'Waozi - Bringing Technology to Life'
+  - var title = 'Waozi - Another Wondering Soul'
+  - var description = 'Just Another Wondering Soul'
   - var social_logo = '/assets/social_logo.png'
   - var url = 'https://waozi.dev'
 
@@ -43,19 +43,5 @@ html(lang="en")
     link(rel="manifest" href="/assets/site.webmanifest")
     link(rel="alternate" type="application/rss+xml" href=rssurl title="Waozi Blog")
   body
-    header.hero
-      a(href="/")
-        img.logo(src=logo, alt="Logo") 
-      p.tagline #{tagline}
-    nav.navigation
-      ul
-        li 
-          a.button(href="/") About
-        li 
-          a.button(href="/portfolio") Portfolio
-        li 
-          a.button(href="/blog") Blog
-        li 
-          a.button(href="/donate") Donate
     div.content
       block content

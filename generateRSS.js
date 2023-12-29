@@ -51,8 +51,8 @@ fs.readdirSync(postsDir).forEach(file => {
 });
 
 const feed = new Feed({
-  title: 'Wao',
-  description: 'Waozi - Bringing Technology to Life',
+  title: 'Waozi',
+  description: 'Another Wondering Soul',
   id: BASE_URL,
   link: BASE_URL,
   image: `${BASE_URL}/logo.png`,
@@ -65,7 +65,7 @@ const feed = new Feed({
     atom: `${BASE_URL}/atom.xml`
   },
   author: {
-    name: 'Waozi Dev',
+    name: 'Waozi',
     email: 'hello@waozi.dev',
     link: BASE_URL
   }
@@ -78,7 +78,7 @@ posts.forEach(post => {
     link: `${BASE_URL}${post.url}`,
     description: post.content || post.desc,
     author: [{
-      name: 'Waozi Dev',
+      name: 'Waozi',
       email: 'hello@waozi.dev'
     }],
     date: new Date(post.date)
