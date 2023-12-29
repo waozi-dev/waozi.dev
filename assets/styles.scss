@@ -9,7 +9,24 @@ $navigation-color: #311942;
   font-family: 'SquareAntiqua';
   src: url('./fonts/SquareAntiqua-Book.ttf'); 
 }
-
+.flex-row {
+  display: flex;
+  max-width: 500px;
+  
+}
+.flex-between {
+  justify-content: space-between;
+}
+.flex-around {
+  justify-content: space-around;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.px-1 {
+  padding: 0 1rem;
+}
 .card {
   border: 2px solid $primary-color;
   border-radius: 1em;

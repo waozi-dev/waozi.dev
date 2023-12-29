@@ -1,6 +1,18 @@
 extends ../layouts/base_layout.pug
 
 block content
+  div.flex-row.flex-between
+    img(src="/assets/logo.jpg" width="256")
+    div.flex-col.px-1
+      h1 Waozi
+      div Just Another Wondering Soul
+      div.flex-col
+        a(href="mailto:hi@waozi.dev") hi@waozi.dev
+        div.flex-row.flex-between
+          a(href="https://github.com/waozi-dev") GitHub 
+          a(href="https://t.me/waozi_dev") TG
+          a(href="https://x.com/waozi_") 𝕏
+
 
   h1 Hello, World!
   p Welcome! Here's a glimpse into my journey and the projects I've passionately worked on. Feel free to explore these links for a deeper dive.
@@ -8,24 +20,15 @@ block content
   h2 Applications
   p 
     a(href="https://naox.io/evoti") Evotico
-    | : This evolved from 'Ukuvota', a community voting platform I developed while living nomadically. It's designed to streamline the voting process for organizations and communities.
+    |  evolved from 'Ukuvota', a community voting platform I developed when I started traveling. It's designed to streamline the voting process for organizations and communities.
 
   p 
     a(href="https://naox.io/inbe") Inner Breeze
-    | : Inspired by my discovery of the Wim Hof Breathing Method, this app helps users practice and track their progress, promoting focus and mindfulness.
+    |  was inspired by my discovery of the Wim Hof Breathing Method, this app helps users practice and track their progress, promoting focus and mindfulness.
 
   h2 Games
   p 
     a(href="https://geocats.netlify.app") Geocats
-    | : A 2D action-platformer I contributed to while working at a video game startup. Although the startup ended, it was the beginning of my freelancing career.
+    |  is a 2D action-platformer I contributed to while working at a video game startup. Although the startup ended, it was the beginning of my freelancing career.
 
   p Beyond these projects, I continue to explore the digital realm, engaging in freelance work and open source contributions. My mission is to blend technology with creativity, bringing unique ideas to life.
-
-  h2 Contact Me
-  p Feel free to reach out for collaborations or just to say hi. You can contact me via email at 
-    a(href="mailto:hi@waozi.dev") hi@waozi.dev
-    | , or connect with me on 
-    a(href="https://github.com/waozi-dev") GitHub 
-    | and 
-    a(href="https://x.com/waozi_") X
-    | .
