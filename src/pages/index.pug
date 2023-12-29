@@ -2,15 +2,17 @@ extends ../layouts/base_layout.pug
 
 block content
   div.flex-row.flex-between
-    img(src="/assets/logo.jpg" width="256")
+    div.flex-col.justify-center
+      img(src="/assets/logo.jpg" height="280")
     div.flex-col.px-1
       h1 Waozi
       div Just Another Wondering Soul
-      div.flex-col
-        a(href="mailto:hi@waozi.dev") hi@waozi.dev
-        div.flex-row.flex-between
+      div.flex-row.flex-between.flex-wrap
+        a(href="mailto:hi@waozi.dev") Email
+          a(href="https://coindrop.to/waozi") Coindrop
           a(href="https://github.com/waozi-dev") GitHub 
-          a(href="https://t.me/waozi_dev") TG
+          a(href="https://waozi.itch.io/") Itch.io
+          a(href="https://t.me/waozi_dev") Telegram
           a(href="https://x.com/waozi_") 𝕏
 
 

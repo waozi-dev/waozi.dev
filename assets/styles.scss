@@ -11,18 +11,29 @@ $navigation-color: #311942;
 }
 .flex-row {
   display: flex;
-  max-width: 500px;
+  max-width: 600px;
   
 }
+
 .flex-between {
   justify-content: space-between;
 }
 .flex-around {
   justify-content: space-around;
 }
+.justify-center {
+  justify-content: center;
+}
+
 .flex-col {
   display: flex;
   flex-direction: column;
+  a {
+    padding: 0.1rem;
+  }
+}
+.flex-wrap {
+  flex-wrap: wrap;
 }
 .px-1 {
   padding: 0 1rem;
