@@ -1,5 +1,17 @@
 extends ../layouts/base_layout.pug
 
+mixin blogCard(data)
+  a(href=data.url)
+    div.card
+      div.card-content
+        h2.card-title= data.title
+        div.card-tags
+          span= data.tag
+        p.card-desc= data.desc
+        span.card-date= data.date
+        span.card-read-time= data.readTime
+  hr
+
 block content
   div.flex-row.flex-between.flex-wrap.mw-600
     div.flex-col.justify-center
@@ -33,4 +45,9 @@ block content
     a(href="https://geocats.netlify.app") Geocats
     |  is a 2D action-platformer I contributed to while working at a video game startup. Although the startup ended, it was the beginning of my freelancing career.
 
-  p Beyond these projects, I continue to explore the digital realm, engaging in freelance work and open source contributions. My mission is to blend technology with creativity, bringing unique ideas to life.
+  h2 Personal Blog
+    div.blog-card-container
+      include ../_gen/metadata.pug
+      +blogCard(technological_privacy_crisis)
+      +blogCard(imaginary_house)
+      +blogCard(clingy_tree)
