@@ -10,9 +10,13 @@ $navigation-color: #311942;
   src: url('./fonts/SquareAntiqua-Book.ttf'); 
 }
 .flex-row {
-  display: flex;
+  display: flex;  
+}
+.mw-600 {
   max-width: 600px;
-  
+}
+.w-300 {
+  width: 300px;
 }
 
 .flex-between {
